@@ -7,6 +7,7 @@ import CartScreen from './screens/CartScreen'
 import ProductScreen from './screens/ProductScreen'
 import SigninScreen from './screens/SigninScreen'
 import { signout } from './actions/userActions'
+import RegisterScreen from './screens/RegisterScreen'
 
 function App() {
   const cart = useSelector(state => state.cart)
@@ -16,6 +17,7 @@ function App() {
   const { userInfo } = userSignin
 
   const dispatch = useDispatch()
+
   const signoutHandler = (e) => {
     e.preventDefault()
     dispatch(signout())
@@ -60,6 +62,7 @@ function App() {
             <Route path='/cart/:id/' element={<CartScreen />} />
             <Route path='/product/:id' element={<ProductScreen />} />
             <Route path='/signin' element={<SigninScreen />} />
+            <Route path='/register' element={<RegisterScreen />} />
             <Route path='/' element={<HomeScreen />} exact={true} />
           </Routes>
         </main>
